@@ -3,7 +3,7 @@ const MqttClient = require("./lib/MqttClient");
 const WebServer = require("./lib/Webserver");
 const EventEmitter = require('events');
 
-const conf = new Configuration();
+const conf = new Configuration(process.env.CONFIG_FILE);
 const events = new EventEmitter();
 
 if(conf.get("mqtt")) {
